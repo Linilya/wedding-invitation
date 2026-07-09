@@ -691,6 +691,8 @@ color:#65574d;
 
 .leaves{
 
+    display:none;
+
     position:fixed;
 
     inset:0;
