@@ -690,19 +690,10 @@ color:#65574d;
 /* ---------- PNG LEAVES ---------- */
 
 .leaves{
-
-    display:none;
-
     position:fixed;
-
     inset:0;
-
     overflow:hidden;
-
     pointer-events:none;
-
-    z-index:2;
-
 }
 
 .leaf{
@@ -794,7 +785,7 @@ rotate(0deg);
 
 transform:
 translateY(25vh)
-translateX(-40px)
+translateX(-15px)
 rotate(70deg);
 
 }
@@ -803,7 +794,7 @@ rotate(70deg);
 
 transform:
 translateY(50vh)
-translateX(35px)
+translateX(15px)
 rotate(180deg);
 
 }
@@ -821,7 +812,7 @@ rotate(280deg);
 
 transform:
 translateY(115vh)
-translateX(40px)
+translateX(15px)
 rotate(360deg);
 
 }
@@ -1965,7 +1956,27 @@ footer p{
     footer p{
         font-size:32px;
     }
+@media (max-width:768px){
 
+    .name{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:12px;
+    }
+
+    .name .line{
+        display:flex;
+        gap:6px;
+    }
+
+    .amp{
+        margin:4px 0;
+        transform:none;
+        font-size:34px;
+    }
+
+}
 }
 
 html,
