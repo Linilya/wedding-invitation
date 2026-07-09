@@ -1986,9 +1986,12 @@ footer p{
 @media (max-width:768px){
 
     .name{
-        flex-direction:column;
-        gap:8px;
-    }
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px;
+}
 
     .line{
         display:flex;
