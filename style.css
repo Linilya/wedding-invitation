@@ -1847,7 +1847,25 @@ footer p{
 }
 
 @media (max-width:768px){
+.name{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:nowrap;
+    gap:4px;
+}
 
+.name .tile{
+    width:46px;
+    height:46px;
+    font-size:30px;
+    flex:0 0 auto;
+}
+
+.name .amp{
+    font-size:34px;
+    transform:none;
+}
     .hero{
         padding:40px 20px;
     }
