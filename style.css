@@ -1858,38 +1858,9 @@ footer p{
 
 @media (max-width:768px){
 
-    footer{
-        padding:60px 20px;
+    .hero{
+        padding:40px 20px;
     }
-
-    footer p{
-        font-size:32px;
-    }
-.hero h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 8px;
-    font-size: 30px;
-}
-    .hero h1 span{
-    white-space: nowrap;
-}
-
-.hero p{
-    font-size: 18px;
-}
-
-.hero{
-    padding: 40px 20px;
-}
-}
-html,
-body{
-    overflow-x:hidden;
-}
-@media (max-width:768px){
 
     .hero h1{
         gap:8px;
@@ -1908,84 +1879,82 @@ body{
         transform:scale(1.1);
     }
 
-}
-@media (max-width:768px){
-
-    .date{
-        font-size:34px;
-        letter-spacing:3px;
-    }
-
-}
-@media (max-width:768px){
-
     .invite{
         font-size:18px;
         line-height:1.6;
         margin:35px 20px;
     }
 
-}
-@media (max-width:768px){
+    .date{
+        font-size:34px;
+        letter-spacing:3px;
+    }
 
-nav{
-    flex-direction:column;
-    gap:15px;
-    padding:18px;
+    nav{
+        flex-direction:column;
+        gap:15px;
+        padding:18px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .logo{
+        font-size:28px;
+    }
+
+    #countdown{
+        gap:12px;
+    }
+
+    #countdown div{
+        width:72px;
+        height:72px;
+    }
+
+    #countdown span{
+        font-size:30px;
+    }
+
+    #countdown small{
+        font-size:10px;
+    }
+
+    .story-gallery{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        height:auto;
+        gap:25px;
+    }
+
+    .photo{
+        position:relative;
+        width:220px;
+        left:auto;
+        right:auto;
+        top:auto;
+        transform:none !important;
+    }
+
+    .decor{
+        display:none;
+    }
+
+    footer{
+        padding:60px 20px;
+    }
+
+    footer p{
+        font-size:32px;
+    }
+
 }
 
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-}
-
-.logo{
-    font-size:28px;
-}
-
-}
-@media (max-width:768px){
-
-#countdown{
-    gap:12px;
-}
-
-#countdown div{
-    width:72px;
-    height:72px;
-}
-
-#countdown span{
-    font-size:30px;
-}
-
-#countdown small{
-    font-size:10px;
-}
-
-}
-@media (max-width:768px){
-
-.story-gallery{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    height:auto;
-    gap:25px;
-}
-
-.photo{
-    position:relative;
-    width:220px;
-    left:auto;
-    right:auto;
-    top:auto;
-    transform:none !important;
-}
-
-.decor{
-    display:none;
-}
-
+html,
+body{
+    overflow-x:hidden;
 }
