@@ -1866,8 +1866,15 @@ footer p{
         font-size:32px;
     }
 .hero h1{
-    font-size: clamp(28px, 8vw, 36px);
-    line-height: 1.15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    font-size: 30px;
+}
+    .hero h1 span{
+    white-space: nowrap;
 }
 
 .hero p{
