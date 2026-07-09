@@ -1290,23 +1290,11 @@ footer{
     align-items: center;
 }
 .name{
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    gap:18px;
-
     flex-wrap:wrap;
-
-    margin:25px 0 45px;
-
-    position:relative;
-
-    z-index:4;
-
+    gap:8px;
 }
 /* =========================================
    ДРЕСС-КОД
