@@ -1865,5 +1865,21 @@ footer p{
     footer p{
         font-size:32px;
     }
+.hero h1{
+    font-size: 52px;
+    line-height: 1.1;
+}
 
+.hero p{
+    font-size: 18px;
+}
+
+.hero{
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+}
+html,
+body{
+    overflow-x:hidden;
 }
