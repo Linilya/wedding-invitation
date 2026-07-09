@@ -1769,120 +1769,30 @@ nav,
 
 @media (max-width:768px){
 
-    .day{
-        padding:80px 20px;
-    }
-
-    .day h2{
-        font-size:42px;
-        margin-bottom:50px;
-    }
-
-    .schedule::before{
-        left:24px;
-    }
-
-    .event{
-        gap:18px;
-        margin-bottom:35px;
-    }
-
-    .time{
-        width:48px;
-        height:48px;
-        font-size:17px;
-    }
-
-    .event h3{
-        font-size:23px;
-    }
-
-    .event p{
-        padding:18px;
-        font-size:15px;
-    }
-
-}
-
-/* ==========================
-          FOOTER
-========================== */
-
-footer{
-    padding:80px 20px;
-    text-align:center;
-    background:#fcfaf7;
-}
-
-footer p{
-    margin:0;
-
-    font-family:"Cormorant Garamond", serif;
-
-    font-size:42px;
-
-    line-height:1.4;
-
-    color:#6d5543;
-
-    letter-spacing:.5px;
-}
-
-.footer-heart{
-    margin-top:22px;
-}
-
-.footer-heart img{
-    width:34px;
-    opacity:.75;
-}
-
-@media (max-width:768px){
-.name{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:6px;
-}
-
-.name .tile{
-    width:46px;
-    height:46px;
-    font-size:30px;
-    flex:0 0 auto;
-}
-
-.name .amp{
-    font-size:34px;
-    transform:none;
-}
     .hero{
         padding:40px 20px;
     }
 
-.hero h1{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:4px;
-    flex-wrap:nowrap;
-    transform:scale(0.78);
-    transform-origin:center;
-}
+    .name{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        gap:6px;
+    }
 
-.hero h1 span,
-.tile{
-    width:52px;
-    height:52px;
-    font-size:34px;
-    border-radius:12px;
-}
+    .name .tile{
+        width:46px;
+        height:46px;
+        font-size:30px;
+        border-radius:12px;
+        flex:0 0 auto;
+    }
 
-.amp{
-    font-size:34px;
-    transform:none;
-}
+    .name .amp{
+        font-size:34px;
+        transform:none;
+    }
 
     .invite{
         font-size:18px;
@@ -1956,51 +1866,12 @@ footer p{
     footer p{
         font-size:32px;
     }
-@media (max-width:768px){
-
-    .name{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:6px;
-}
-
-    .line{
-       
-        justify-content:center;
-        align-items:center;
-        gap:6px;
-    }
 
 }
 
-    .amp{
-        margin:4px 0;
-        transform:none;
-        font-size:34px;
-    }
-
-}
-}
-@media (max-width:768px){
-
-    .name{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:6px;
-}
-
-    .line{
-       
-        justify-content:center;
-        gap:6px;
-    }
-
-}
 html,
 body{
+    overflow-x:hidden;
+}
     overflow-x:hidden;
 }
