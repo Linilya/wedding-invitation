@@ -1293,8 +1293,17 @@ footer{
     display:flex;
     justify-content:center;
     align-items:center;
-    flex-wrap:wrap;
-    gap:8px;
+    flex-wrap:nowrap;
+    gap:12px;
+    margin:40px 0;
+}
+
+.name .tile{
+    flex-shrink:0;
+}
+
+.amp{
+    margin:0 14px;
 }
 /* =========================================
    ДРЕСС-КОД
