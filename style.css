@@ -1286,8 +1286,7 @@ footer{
     display:flex;
     justify-content:center;
     align-items:center;
-    flex-wrap:wrap;
-    gap:8px;
+    gap:6px;
 }
 /* =========================================
    ДРЕСС-КОД
@@ -1883,6 +1882,26 @@ body{
         display:block;
         flex-basis:100%;
         height:0;
+    }
+
+}
+.line{
+    display:inline-flex;
+    gap:6px;
+}
+
+@media (max-width:768px){
+
+    .name{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:8px;
+    }
+
+    .line{
+        display:flex;
+        justify-content:center;
     }
 
 }
