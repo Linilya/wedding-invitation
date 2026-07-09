@@ -1852,22 +1852,23 @@ footer p{
         padding:40px 20px;
     }
 
-    .hero h1{
-        gap:8px;
-    }
+   .hero h1{
+    gap:4px;
+    justify-content:center;
+}
 
-    .hero h1 span,
-    .tile{
-        width:52px;
-        height:52px;
-        font-size:34px;
-        border-radius:12px;
-    }
+.hero h1 span,
+.tile{
+    width:46px;
+    height:46px;
+    font-size:30px;
+    border-radius:10px;
+}
 
-    .amp{
-        font-size:40px;
-        transform:scale(1.1);
-    }
+.amp{
+    font-size:34px;
+    transform:scale(1);
+}
 
     .invite{
         font-size:18px;
