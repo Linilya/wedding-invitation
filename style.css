@@ -1890,15 +1890,7 @@ footer p{
         letter-spacing:3px;
     }
 
-    @media (max-width:768px){
 
-    nav{
-        display:none;
-    }
-
-    .hero{
-        padding-top:60px;
-    }
 
 }nav{
         flex-direction:column;
