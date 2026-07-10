@@ -120,3 +120,33 @@ button.addEventListener("click",()=>{
 document.querySelector(".hero").scrollIntoView({
     behavior:"smooth"
 });
+const placeholders = [
+    "Ваня и Маня",
+    "Бабушка и дедушка",
+    "Лучшая подруга",
+    "Зайка",
+    "Самая лучшая сестра на свете",
+    "Семья Ивановых",
+    "Тётя Наташа",
+    "Любимые друзья"
+];
+
+const input = document.getElementById("guestName");
+
+let index = 0;
+
+function changePlaceholder(){
+
+    input.placeholder = placeholders[index];
+
+    index++;
+
+    if(index >= placeholders.length){
+        index = 0;
+    }
+
+}
+
+changePlaceholder();
+
+setInterval(changePlaceholder,2500);
