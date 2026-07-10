@@ -92,20 +92,7 @@ function showInvitation(name) {
 
 button.addEventListener("click", (e) => {
 
-    e.preventDefault();
-
-    const name = input.value.trim();
-
-    if (name === "") {
-        input.focus();
-        input.placeholder = "Введите имя";
-        return;
-    }
-
-    showInvitation(name);
-
-});
-
+  
 input.addEventListener("keydown", (e) => {
 
     if (e.key === "Enter") {
