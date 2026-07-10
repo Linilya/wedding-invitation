@@ -9,23 +9,30 @@ function updateTimer() {
     const now = new Date().getTime();
     const distance = weddingDate - now;
 
-    if (distance < 0) {
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+    const days = document.getElementById("days");
+    const hours = document.getElementById("hours");
+    const minutes = document.getElementById("minutes");
+    const seconds = document.getElementById("seconds");
+
+    if (!days || !hours || !minutes || !seconds) return;
+
+    if (distance <= 0) {
+        days.textContent = "00";
+        hours.textContent = "00";
+        minutes.textContent = "00";
+        seconds.textContent = "00";
         return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("days").textContent = String(days).padStart(2, "0");
-    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-    document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-    document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    days.textContent = String(d).padStart(2, "0");
+    hours.textContent = String(h).padStart(2, "0");
+    minutes.textContent = String(m).padStart(2, "0");
+    seconds.textContent = String(s).padStart(2, "0");
 
 }
 
@@ -65,76 +72,81 @@ const greeting = document.getElementById("guestGreeting");
 const button = document.getElementById("openInvite");
 const input = document.getElementById("guestName");
 
-// Запрещаем прокрутку до открытия приглашения
-document.documentElement.style.overflow = "hidden";
-document.body.style.overflow = "hidden";
-setTimeout(() => {
-    input.focus();
-}, 300);
-function showInvitation(name) {
+if (welcomeScreen && button && input && greeting) {
 
-    greeting.innerHTML = `
-        <span class="guest-title">
-            ${name}!
-        </span>
-    `;
-
-    welcomeScreen.classList.add("hide");
-
-    document.documentElement.style.overflow = "";
-    document.body.style.overflow = "";
+    // блокируем прокрутку
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
 
     setTimeout(() => {
-        welcomeScreen.remove();
-    }, 600);
+        input.focus();
+    }, 300);
+
+    function showInvitation(name) {
+
+        greeting.innerHTML = `
+            <span class="guest-title">
+                ${name}!
+            </span>
+        `;
+
+        welcomeScreen.classList.add("hide");
+
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+
+        setTimeout(() => {
+            welcomeScreen.remove();
+        }, 600);
+
+    }
+
+    button.addEventListener("click", () => {
+
+        let name = input.value.trim();
+
+        if (name === "") {
+            input.focus();
+            return;
+        }
+
+        showInvitation(name);
+
+    });
+
+    input.addEventListener("keydown", (e) => {
+
+        if (e.key === "Enter") {
+            button.click();
+        }
+
+    });
+
+    // ==========================
+    // Меняющиеся подсказки
+    // ==========================
+
+    const placeholders = [
+
+        "Ваня и Маня",
+        "Бабушка и дедушка",
+        "Зайки",
+        "Тётя Наташа",
+        "Любимые друзья",
+        "Самая лучшая сестра",
+        "Лучший друг"
+
+    ];
+
+    let index = 0;
+
+    input.placeholder = placeholders[0];
+
+    setInterval(() => {
+
+        index = (index + 1) % placeholders.length;
+        input.placeholder = placeholders[index];
+
+    }, 2500);
 
 }
-
-button.addEventListener("click", () => {
-
-    const name = input.value.trim();
-
-    if(name === ""){
-        input.focus();
-        return;
-    }
-
-    showInvitation(name);
-
-});
-
-input.addEventListener("keydown", (e) => {
-
-    if(e.key === "Enter"){
-        button.click();
-    }
-
-});
-
-// ==========================
-// Меняющиеся подсказки
-// ==========================
-
-const placeholders = [
-
-    "Ваня и Маня",
-    "Бабушка и дедушка",
-    "Зайки",
-    "Тётя Наташа",
-    "Любимые друзья",
-    "Самая лучшая сестра",
-    "Лучший друг"
-    
-
-];
-
-let index = 0;
-
-input.placeholder = placeholders[0];
-
-setInterval(() => {
-
-    index = (index + 1) % placeholders.length;
-    input.placeholder = placeholders[index];
-
-}, 2500);
