@@ -18,7 +18,26 @@
 </head>
 
 <body>
+<div id="welcomeScreen">
 
+    <div id="guestForm" class="guest-form">
+
+        <h3>Добро пожаловать!</h3>
+
+        <p>Для кого мы открываем приглашение?</p>
+
+        <input
+            type="text"
+            id="guestName"
+            placeholder="">
+
+        <button id="openInvite" class="button">
+            Открыть приглашение
+        </button>
+
+    </div>
+
+</div>
 <header class="hero">
 
     <div class="hero-overlay"></div>
@@ -46,22 +65,7 @@
 
 
   
-<div id="guestForm" class="guest-form">
 
-    <h3>Добро пожаловать!</h3>
-
-    <p>Введите ваше имя или имена</p>
-    <input
-    type="text"
-    id="guestName"
-    placeholder="">
-
-
-    <button id="openInvite" class="button">
-        Открыть приглашение
-    </button>
-
-</div>
     <p class="invite" id="inviteText">
 
     <span id="guestGreeting"></span>
