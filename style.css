@@ -2111,4 +2111,5 @@ font-size:26px;
 #welcomeScreen.hide{
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
 }
