@@ -77,7 +77,7 @@ const greeting = document.getElementById("guestGreeting");
 
 const button = document.getElementById("openInvite");
 
-function showInvitation(name, plus){
+function showInvitation(name){
 
     greeting.innerHTML = `
 <span class="guest-title">
@@ -95,8 +95,9 @@ function showInvitation(name, plus){
 
 }
 
-button.addEventListener("click",()=>{
+button.addEventListener("click", (e) => {
 
+    e.preventDefault();
     const name=document.getElementById("guestName").value.trim();
 
     if(name===""){
@@ -107,13 +108,8 @@ button.addEventListener("click",()=>{
 
     }
 
-    const plus=document.getElementById("plusOne").checked;
 
-    
-
-    localStorage.setItem("guestPlus",plus);
-
-    showInvitation(name,plus);
+    showInvitation(name);
 
 });
 
@@ -135,18 +131,12 @@ const input = document.getElementById("guestName");
 
 let index = 0;
 
-function changePlaceholder(){
+setInterval(() => {
 
     input.placeholder = placeholders[index];
 
-    index++;
+    index = (index + 1) % placeholders.length;
 
-    if(index >= placeholders.length){
-        index = 0;
-    }
+}, 2500);
 
-}
-
-changePlaceholder();
-
-setInterval(changePlaceholder,2500);
+input.placeholder = placeholders[0];
