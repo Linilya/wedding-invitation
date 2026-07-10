@@ -79,7 +79,11 @@ const button = document.getElementById("openInvite");
 
 function showInvitation(name, plus){
 
-    greeting.innerHTML = `Дорогой(ая) <strong>${name}${plus ? " +1" : ""}</strong>!`;
+    greeting.innerHTML = `
+<span class="guest-title">
+    ${name}!
+</span>
+`;
 
     guestForm.classList.add("hidden");
 
@@ -105,7 +109,7 @@ button.addEventListener("click",()=>{
 
     const plus=document.getElementById("plusOne").checked;
 
-    localStorage.setItem("guestName",name);
+    
 
     localStorage.setItem("guestPlus",plus);
 
@@ -113,14 +117,6 @@ button.addEventListener("click",()=>{
 
 });
 
-window.addEventListener("load",()=>{
-
-    const name=localStorage.getItem("guestName");
-
-    if(!name)return;
-
-    const plus=localStorage.getItem("guestPlus")==="true";
-
-    showInvitation(name,plus);
-
+document.querySelector(".hero").scrollIntoView({
+    behavior:"smooth"
 });
