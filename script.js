@@ -76,7 +76,9 @@ const inviteText = document.getElementById("inviteText");
 const greeting = document.getElementById("guestGreeting");
 
 const button = document.getElementById("openInvite");
-
+// Запрещаем прокрутку страницы
+document.documentElement.style.overflow = "hidden";
+document.body.style.overflow = "hidden";
 function showInvitation(name){
 
     greeting.innerHTML = `
@@ -92,7 +94,9 @@ function showInvitation(name){
         guestForm.style.display="none";
 
     },500);
-
+// Возвращаем прокрутку
+document.documentElement.style.overflow = "";
+document.body.style.overflow = "";
 }
 
 button.addEventListener("click", (e) => {
@@ -102,7 +106,7 @@ button.addEventListener("click", (e) => {
 
     if(name===""){
 
-        alert("Введите имя");
+        document.getElementById("guestName").focus();
 
         return;
 
@@ -113,8 +117,7 @@ button.addEventListener("click", (e) => {
 
 });
 
-document.querySelector(".hero").scrollIntoView({
-    behavior:"smooth"
+
 });
 const placeholders = [
     "Ваня и Маня",
@@ -140,3 +143,4 @@ setInterval(() => {
 }, 2500);
 
 input.placeholder = placeholders[0];
+input.value = "";
