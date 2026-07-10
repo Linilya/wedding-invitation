@@ -90,19 +90,26 @@ function showInvitation(name) {
 
 }
 
-button.addEventListener("click", (e) => {
+button.addEventListener("click", () => {
 
-  
+    const name = input.value.trim();
+
+    if(name === ""){
+        input.focus();
+        return;
+    }
+
+    showInvitation(name);
+
+});
+
 input.addEventListener("keydown", (e) => {
 
-    if (e.key === "Enter") {
+    if(e.key === "Enter"){
         button.click();
     }
 
 });
-
-
-
 
 // ==========================
 // Меняющиеся подсказки
