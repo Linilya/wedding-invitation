@@ -60,7 +60,7 @@ document.querySelectorAll(".fade-up").forEach(item => {
 // Экран приветствия
 // ==========================
 
-const guestForm = document.getElementById("guestForm");
+const welcomeScreen = document.getElementById("welcomeScreen");
 const greeting = document.getElementById("guestGreeting");
 const button = document.getElementById("openInvite");
 const input = document.getElementById("guestName");
@@ -68,9 +68,28 @@ const input = document.getElementById("guestName");
 // Запрещаем прокрутку до открытия приглашения
 document.documentElement.style.overflow = "hidden";
 document.body.style.overflow = "hidden";
-
+setTimeout(() => {
+    input.focus();
+}, 300);
 function showInvitation(name) {
 
+    greeting.innerHTML = `
+        <span class="guest-title">
+            ${name}!
+        </span>
+    `;
+
+    welcomeScreen.classList.add("hide");
+
+    setTimeout(() => {
+        welcomeScreen.style.display = "none";
+    }, 600);
+
+    // Возвращаем прокрутку
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+
+}
     greeting.innerHTML = `
         <span class="guest-title">${name}!</span>
     `;
@@ -93,10 +112,21 @@ button.addEventListener("click", (e) => {
 
     const name = input.value.trim();
 
-    if (name === "") {
-        input.focus();
-        return;
+   if (name === "") {
+
+    input.focus();
+    input.placeholder = "Введите имя";
+
+    return;
+
+}
+    input.addEventListener("keydown", (e) => {
+
+    if (e.key === "Enter") {
+        button.click();
     }
+
+});
 
     showInvitation(name);
 
