@@ -101,29 +101,7 @@ input.addEventListener("keydown", (e) => {
 
 });
 
-    e.preventDefault();
 
-    const name = input.value.trim();
-
-   if (name === "") {
-
-    input.focus();
-    input.placeholder = "Введите имя";
-
-    return;
-
-}
-    input.addEventListener("keydown", (e) => {
-
-    if (e.key === "Enter") {
-        button.click();
-    }
-
-});
-
-    showInvitation(name);
-
-});
 
 
 // ==========================
