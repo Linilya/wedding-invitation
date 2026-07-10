@@ -2093,3 +2093,22 @@ font-size:26px;
 }
 
 }
+#welcomeScreen{
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(252,250,247,.82);
+    backdrop-filter: blur(12px);
+
+    transition: .6s;
+}
+
+#welcomeScreen.hide{
+    opacity: 0;
+    visibility: hidden;
+}
