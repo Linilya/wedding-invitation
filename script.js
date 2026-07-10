@@ -79,34 +79,40 @@ function showInvitation(name) {
         </span>
     `;
 
-welcomeScreen.classList.add("hide");
+    welcomeScreen.classList.add("hide");
 
-setTimeout(() => {
-    welcomeScreen.remove();
-}, 600);
-
-    // Возвращаем прокрутку
     document.documentElement.style.overflow = "";
     document.body.style.overflow = "";
-
-}
-    greeting.innerHTML = `
-        <span class="guest-title">${name}!</span>
-    `;
-
-    guestForm.classList.add("hidden");
 
     setTimeout(() => {
-        guestForm.style.display = "none";
-    }, 500);
-
-    // Возвращаем прокрутку
-    document.documentElement.style.overflow = "";
-    document.body.style.overflow = "";
+        welcomeScreen.remove();
+    }, 600);
 
 }
 
 button.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    const name = input.value.trim();
+
+    if (name === "") {
+        input.focus();
+        input.placeholder = "Введите имя";
+        return;
+    }
+
+    showInvitation(name);
+
+});
+
+input.addEventListener("keydown", (e) => {
+
+    if (e.key === "Enter") {
+        button.click();
+    }
+
+});
 
     e.preventDefault();
 
