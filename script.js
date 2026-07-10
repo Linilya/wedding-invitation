@@ -69,3 +69,58 @@ const observer = new IntersectionObserver((entries)=>{
 document.querySelectorAll(".fade-up").forEach(item=>{
     observer.observe(item);
 });
+const guestForm = document.getElementById("guestForm");
+
+const inviteText = document.getElementById("inviteText");
+
+const greeting = document.getElementById("guestGreeting");
+
+const button = document.getElementById("openInvite");
+
+function showInvitation(name, plus){
+
+    greeting.innerHTML = `Дорогой(ая) <strong>${name}${plus ? " +1" : ""}</strong>!`;
+
+    guestForm.classList.add("hidden");
+
+    setTimeout(()=>{
+
+        guestForm.style.display="none";
+
+    },500);
+
+}
+
+button.addEventListener("click",()=>{
+
+    const name=document.getElementById("guestName").value.trim();
+
+    if(name===""){
+
+        alert("Введите имя");
+
+        return;
+
+    }
+
+    const plus=document.getElementById("plusOne").checked;
+
+    localStorage.setItem("guestName",name);
+
+    localStorage.setItem("guestPlus",plus);
+
+    showInvitation(name,plus);
+
+});
+
+window.addEventListener("load",()=>{
+
+    const name=localStorage.getItem("guestName");
+
+    if(!name)return;
+
+    const plus=localStorage.getItem("guestPlus")==="true";
+
+    showInvitation(name,plus);
+
+});
