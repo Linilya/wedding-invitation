@@ -1293,9 +1293,13 @@ footer{
     display:flex;
     justify-content:center;
     align-items:center;
-    flex-wrap:wrap;
+    gap:10px;
+}
+.line{
+    display:flex;
     gap:8px;
 }
+
 /* =========================================
    ДРЕСС-КОД
 ========================================= */
@@ -1861,6 +1865,14 @@ footer p{
         font-size:34px;
         border-radius:12px;
     }
+    @media (max-width:768px){
+
+    .name{
+        flex-direction:column;
+        gap:12px;
+    }
+
+}
 
     .amp{
         font-size:40px;
