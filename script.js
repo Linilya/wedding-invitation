@@ -79,7 +79,7 @@ function showInvitation(name) {
         </span>
     `;
 
-  welcomeScreen.classList.add("hide");
+welcomeScreen.classList.add("hide");
 
 setTimeout(() => {
     welcomeScreen.remove();
