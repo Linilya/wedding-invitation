@@ -79,11 +79,11 @@ function showInvitation(name) {
         </span>
     `;
 
-    welcomeScreen.classList.add("hide");
+  welcomeScreen.classList.add("hide");
 
-    setTimeout(() => {
-        welcomeScreen.style.display = "none";
-    }, 600);
+setTimeout(() => {
+    welcomeScreen.remove();
+}, 600);
 
     // Возвращаем прокрутку
     document.documentElement.style.overflow = "";
