@@ -69,3 +69,17 @@ const observer = new IntersectionObserver((entries)=>{
 document.querySelectorAll(".fade-up").forEach(item=>{
     observer.observe(item);
 });
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+musicBtn.addEventListener("click", () => {
+
+    if (music.paused) {
+        music.play();
+        musicBtn.classList.add("playing");
+    } else {
+        music.pause();
+        musicBtn.classList.remove("playing");
+    }
+
+});
