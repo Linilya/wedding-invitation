@@ -18,7 +18,38 @@
 </head>
 
 <body>
+<!-- =========================
+     Welcome Screen
+========================= -->
 
+<div id="welcomeScreen" class="welcome-screen">
+
+    <div class="welcome-backdrop"></div>
+
+    <div class="welcome-card">
+
+        <span class="welcome-subtitle">
+            свадебное приглашение
+        </span>
+
+        <h1>
+            Для кого открываем приглашение?
+        </h1>
+
+        <input
+            id="guestName"
+            type="text"
+            placeholder="Ваня и Маня"
+            autocomplete="off"
+        >
+
+        <button id="openInvite">
+            Открыть приглашение
+        </button>
+
+    </div>
+
+</div>
 <header class="hero">
 
     <div class="hero-overlay"></div>
@@ -45,28 +76,41 @@
     <div class="hero-content">
 
 
-        <p class="invite">
+       <div id="guestGreeting" class="guestGreeting"></div>
 
-            Мы счастливы пригласить вас разделить с нами 
-            самый важный и трепетный день в нашей жизни — день нашей свадьбы
+<p class="invite">
 
-        </p>
-<h1 class="name">
-    <div class="line">
+    Мы счастливы пригласить вас разделить с нами
+    самый важный и трепетный день в нашей жизни —
+    день нашей свадьбы.
+
+</p>
+<h1 class="name desktop-name">
+
+    <div class="arc arc-top">
+
         <span class="tile pink">Л</span>
-        <span class="tile yellow">и</span>
-        <span class="tile green">н</span>
-        <span class="tile blue">а</span>
+        <span class="tile yellow">И</span>
+        <span class="tile green">Н</span>
+        <span class="tile blue">А</span>
+
     </div>
 
-    <div class="line">
-        <span class="tile amp">&</span>
+    <div class="ampersand">
+
+        <span>&</span>
+
+    </div>
+
+    <div class="arc arc-bottom">
 
         <span class="tile yellow">И</span>
-        <span class="tile peach">л</span>
-        <span class="tile mint">ь</span>
-        <span class="tile gold">я</span>
+        <span class="tile peach">Л</span>
+        <span class="tile mint">Ь</span>
+        <span class="tile gold">Я</span>
+
     </div>
+
 </h1>
 
         <div class="date">
@@ -457,13 +501,7 @@
     <img src="assets/leaves/leaf4.png" class="leaf leaf10">
 
 </div>
-<div class="music-player" id="musicPlayer">
-    <button id="musicBtn">🎵</button>
-</div>
 
-<audio id="bgMusic" loop>
-    <source src="assets/music/song.mp3" type="audio/mpeg">
-</audio>
 <script src="script.js"></script>
 
 </body>
