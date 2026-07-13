@@ -1946,3 +1946,35 @@ html,
 body{
     overflow-x:hidden;
 }
+.music-player{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:9999;
+}
+
+#musicBtn{
+    width:58px;
+    height:58px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(10px);
+    cursor:pointer;
+    font-size:26px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+#musicBtn:hover{
+    transform:scale(1.08);
+}
+
+#musicBtn.playing{
+    animation:spin 5s linear infinite;
+}
+
+@keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
