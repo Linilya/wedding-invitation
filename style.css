@@ -1978,3 +1978,46 @@ body{
     from{transform:rotate(0deg);}
     to{transform:rotate(360deg);}
 }
+/* ==========================
+      Музыкальный плеер
+========================== */
+
+.music-player{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+}
+
+#musicBtn{
+    width: 62px;
+    height: 62px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,.85);
+    backdrop-filter: blur(10px);
+
+    font-size: 28px;
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+    transition: .3s ease;
+}
+
+#musicBtn:hover{
+    transform: scale(1.08);
+}
+
+#musicBtn.playing{
+    animation: musicSpin 6s linear infinite;
+}
+
+@keyframes musicSpin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
